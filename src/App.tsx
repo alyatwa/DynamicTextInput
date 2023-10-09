@@ -1,6 +1,4 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 type box = {
 	id: string;
@@ -48,7 +46,7 @@ function App() {
 		<div className="flex flex-col gap-4 items-center justify-center">
 			<div className="flex flex-row gap-4">
 				{boxs &&
-					boxs.map((box, index) => (
+					boxs.map((box) => (
 						<div className="flex flex-row gap-3 items-center justify-center" key={box.id}>
 							<PlusButton
 								boxId={box.id}
@@ -62,7 +60,7 @@ function App() {
                   updateIndex(box.id,e.target.value.slice(-1).toLocaleUpperCase())
 								}}
 								value={box.value}
-								onFocus={(e) => setFocus(box.id)}
+								onFocus={() => setFocus(box.id)}
 							/>
 							<PlusButton
 								boxId={box.id}
